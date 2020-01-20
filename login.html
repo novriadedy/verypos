@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Masuk</title>
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsen-css-components.min.css">
+	<script src="assets/vendor/onsenui/js/onsenui.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<ons-page>
+  <div style="text-align: center; margin-top: 30px;">
+	<h1>Masuk</h1>
+    <p>
+      <input type="text" class="text-input text-input--underbar" placeholder="nama pengguna" id="username" required>
+    </p>
+    <p>
+		<input type="password" class="text-input text-input--underbar" placeholder="sandi" id="password" required>
+    </p>
+    <p style="margin-top: 30px;">
+      <ons-button id="sign-in">Masuk</ons-button>
+    </p>
+	<p style="margin-top: 30px;">
+      belum punya akun ?
+    </p>
+	<p >
+      <ons-button id="register">Daftar</ons-button>
+    </p>
+  </div>
+</ons-page>
+
+</body>
+
+<script>
+$(function(){
+  // Initialization code
+  $('#sign-in').on('click', function(e) {
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+
+		if (username === 'bob' && password === 'secret') {
+			ons.notification.alert('Congratulations!');
+		} else {
+			ons.notification.alert('nama pengguna atau password tidak valid.');
+		}
+  })
+  $('#register').on('click', function(e) {
+		window.location.href = "register.html";
+  })
+});
+</script>
+
+</html>

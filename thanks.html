@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Terimakasih</title>
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsen-css-components.min.css">
+	<script src="assets/vendor/onsenui/js/onsenui.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<ons-page>
+  <div style="text-align: center; margin-top: 30px;">
+	<h1>Selamat!</h1>
+    <p>
+      Email verifikasi telah terkirim ke akun email Anda.
+    </p>
+	<p>
+      belum menerima email ?
+    </p>
+    <p style="margin-top: 30px;">
+      <ons-button id="resend">kirim ulang email</ons-button>
+    </p>
+	<p>
+      <ons-button id="sign-in">Masuk</ons-button>
+    </p>
+  </div>
+</ons-page>
+
+</body>
+
+<script>
+$(function(){
+  // Initialization code
+  $('#resend').on('click', function(e) {
+		ons.notification.alert('verifikasi emaail terkirim.');
+  })
+  $('#sign-in').on('click', function(e) {
+		window.location.href = "login.html";
+  })
+});
+</script>
+
+</html>

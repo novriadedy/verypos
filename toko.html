@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Toko</title>
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsen-css-components.min.css">
+	<script src="assets/vendor/onsenui/js/onsenui.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<ons-page>
+  <div style="text-align: center; margin-top: 30px;">
+	<h1>Profil Toko</h1>
+	<form id="toko-form">
+    <p>
+		<input type="text" class="text-input text-input--underbar" placeholder="Nama toko" id="nama-toko" required>
+    </p>
+	<p>
+		<input type="text" class="text-input text-input--underbar" placeholder="Pemilik toko" id="pemilik-toko" required>
+    </p>
+	<p>
+		<input type="number" class="text-input text-input--underbar" placeholder="Telepon toko" id="telepon-toko" required>
+    </p>
+	<p>
+      <textarea class="textarea" rows="5" placeholder="Alamat toko" id="alamat-toko"></textarea>
+    </p>
+	<p>
+		<select class="select-input select-input--underbar" id="jenis-toko">
+		  <option value="">Pilih jenis usaha</option>
+		  <option value="Restoran">Restoran</option>
+		  <option value="Salon/ barber shop">Salon/ barber shop</option>
+		  <option value="Minimarket">Minimarket</option>
+		  <option value="Lainnya">Lainnya</option>
+		</select>
+	</p>
+    
+    <p style="margin-top: 30px;">
+      <ons-button id="simpan">Simpan</ons-button>
+    </p>
+	
+	<input type="submit" class="submit" style="display:none">
+	
+	</form>
+  </div>
+</ons-page>
+
+</body>
+
+<script>
+$(function(){
+  // Initialization code
+  $('#simpan').on('click', function(e) {
+		$('#toko-form .submit').click();
+		window.location.href = "thanks.html";
+  })
+});
+</script>
+
+</html>

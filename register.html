@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Daftar</title>
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="assets/vendor/onsenui/css/onsen-css-components.min.css">
+	<script src="assets/vendor/onsenui/js/onsenui.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<ons-page>
+  <div style="text-align: center; margin-top: 30px;">
+	<h1>Daftar</h1>
+	<form id="register-form" action="destination.html">
+    <p>
+		<input type="email" class="text-input text-input--underbar" placeholder="email / surel" id="email" name="email" required>
+    </p>
+	<p>
+		<input type="text" class="text-input text-input--underbar" placeholder="nama pengguna" id="username" name="username" required>
+    </p>
+    <p>
+		<input type="password" class="text-input text-input--underbar" placeholder="sandi" id="password" name="password" required>
+    </p>
+	<p>
+		<input type="password" class="text-input text-input--underbar" placeholder="konfirmasi sandi" name="password_confirmation" id="password_confirmation" required>
+    </p>
+	
+    <p style="margin-top: 30px;">
+		<input type="submit" class="button button--outline" value="Daftar">
+    </p>
+	
+	</form>
+	<p style="margin-top: 30px;">
+      Sudah punya akun ?
+    </p>
+	<p >
+      <ons-button id="sign-in">Masuk</ons-button>
+    </p>
+  </div>
+</ons-page>
+
+</body>
+
+<script>
+$(document).ready(function(){
+    $( "#register-form" ).submit(function( event ) {
+	  alert( "Handler for .submit() called." );
+	  event.preventDefault();
+	});
+});
+
+var password = document.getElementById("password");
+var confirm_password = document.getElementById("password_confirmation");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+	confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+	confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+
+$('#sign-in').on('click', function(e) {
+	window.location.href = "login.html";
+})
+
+</script>
+
+</html>
